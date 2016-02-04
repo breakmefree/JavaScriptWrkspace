@@ -1,0 +1,44 @@
+<!-- Takes input as string and count the following:
+
+Number of words in the text
+Number of characters in the text
+Number of spaces in the text
+Average word length
+Test case
+
+counterCounter("Count this now");
+would count 3 words, 11 characters, 3 chars avg word length, and 2 spaces.
+
+Return output as a single object, and don't use any libraries.
+
+Example output:
+
+{"words": 3, "chars": 11, "avgLength": 3, "spaces": 2}
+Again, this is a returned object, not a string. -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Counter Counter</title>
+    <script type="text/javascript">
+        var counterCounter = function(vstr) {
+        var wlist = vstr.split(" ");
+        var counterObj = {};
+        counterObj['words'] = wlist.length;
+        counterObj['chars'] = vstr.length;
+        counterObj['avgLength'] = (vstr.length - wlist.length + 1) / wlist.length;
+        counterObj['spaces'] = (wlist.length - 1);
+        return counterObj;
+      };
+      var res = counterCounter("Count this now please");
+      console.log(res);
+
+      document.getElementById("result").innerHTML = JSON.stringify(res);
+
+      
+    </script>
+  </head>
+  <body>
+    <p id="result"></p>
+  </body>
+</html>

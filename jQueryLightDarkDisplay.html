@@ -1,0 +1,38 @@
+<!-- Implementation a light/dark theme feature using jQuery. Make a basic webpage that has some text on it. Put links in the footer that change the background and text color when you click them. (dark on light vs light on dark) -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+			   $("#da").click(function(){
+			      $("#demo").addClass("darkOnLight");
+			    });
+			    
+			   $("#li").click(function(){
+			      $("#demo").addClass("lightOnDark");
+			    });
+			});
+		</script>
+		<style>
+			.darkOnLight{
+			    color: red;
+			    background-color: pink;
+			}
+
+			.lightOnDark{
+			    color: pink;
+			    background-color: red;
+			}
+		</style>
+	</head>
+	<body>
+
+		<h1 id="demo">The Background color change display!</h1>
+
+		<p id="footer">
+		  <button id="da">Dark-on-Light</button> &nbsp;<button id="li">Light-on-Dark</button>
+		</p>
+
+	</body>
+</html>
